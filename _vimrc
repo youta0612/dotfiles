@@ -39,3 +39,6 @@ autocmd FileType vue syntax sync fromstart
 " 見た目
 " 行番号薄く
 hi LineNr ctermfg=245
+" 行番号ハイライト
+set cursorline
+hi clear CursorLine
