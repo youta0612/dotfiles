@@ -14,13 +14,6 @@ Plug 'cohama/lexima.vim'
 " 見た目カスタマイズ
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" airlineの表示項目
-" let g:airline_section_a = airline#section#create(['mode', 'crypt'])
-" let g:airline_section_b = airline#section#create(['branch'])
-" let g:airline_section_c = airline#section#create(['filename'])
-" let g:airline_section_x = airline#section#create(['tagbar', 'filetype'])
-" let g:airline_section_y = airline#section#create(['fileencoding', 'fileformat'])
-
 
 call plug#end()
 
@@ -40,7 +33,16 @@ nnoremap [q :cprev<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [Q :<C-u>cfirst<CR>
 nnoremap ]Q :<C-u>clast<CR>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
 autocmd FileType vue syntax sync fromstart
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" 見た目
+" 行番号薄く
+hi LineNr ctermfg=245
+" 行番号ハイライト
+set cursorline
+hi clear CursorLine
